@@ -35,9 +35,6 @@ if uploaded_file:
             domain_df = pd.DataFrame(domain_series)
             domain_df.columns = ["Company Website"]  # Ensure column name
 
-            # Drop header row from output (as requested)
-            domain_df = domain_df[1:].reset_index(drop=True)
-
             # Split into chunks of 500
             chunks = split_dataframe(domain_df, 500)
 
