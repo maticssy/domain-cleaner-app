@@ -48,7 +48,6 @@ if uploaded_file:
             domain_df = pd.DataFrame(domain_series)
             domain_df.columns = ["Company Website"]
 
-            # ✅ FIXED: No deletion of the first row
             # Split into chunks of 500
             chunks = split_dataframe(domain_df, 500)
 
@@ -73,4 +72,4 @@ if uploaded_file:
                             mime="text/csv"
                         )
     except Exception as e:
-        st.error(f"An error
+        st.error(f"An error occurred while processing the file: {e}")
